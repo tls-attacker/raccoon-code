@@ -1,1 +1,1 @@
-# raccooon-attack-code
+# Placeholder repo for the Raccoon Attack code
