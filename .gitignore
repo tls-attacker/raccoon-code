@@ -1,4 +1,6 @@
-figure_3/.gitignore
-figure_3/get_medians.py
-figure_3/openssl_hmac.c
-figure_3/plot.py
+figure_3/Figure_3.png
+figure_3/medians_sha256
+figure_3/medians_sha384
+figure_3/openssl_hmac
+figure_3/raw_sha256
+figure_3/raw_sha384
