@@ -55,11 +55,6 @@ def main(filenames):
         ax.set_xticks(rising_tick_xs)
         ax.set_yticks(rising_tick_ys)
 
-##        new_ax = ax1.twin()
-##        new_ax.set_yticks(rising_tick_ys)
-##    ax1.vlines(rising_tick_xs, ax1.get_ybound()[0], rising_tick_ys, linestyle="dashed")
-##    ax2.vlines(falling_tick_xs, ax2.get_ylim()[1], falling_tick_ys, linestyle="dashed")
-
     plt.legend(loc='upper left')
     fig.savefig('Figure_3.png')
     plt.show()
