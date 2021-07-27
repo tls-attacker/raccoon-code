@@ -1,24 +1,11 @@
-# TLS-Attacker-Project-Template
-This is an example Maven project which uses TLS-Attacker as a library. It provies a basic pom.xml which you can adjust to your needs and some basic code on how to call TLS-Attacker code.
-First of all you need to install TLS-Attacker. If you already did that you can skip this step.
-```
-git clone https://github.com/RUB-NDS/TLS-Attacker.git
-cd TLS-Attacker
+# Raccoon-Attacker-Side-Channel Analysis
+This tool measures raccoon attack side-channels. For this purpose the tool repeatedly connects to a server and randomly send a CKE message which will either result in PMS with a leading zero byte or not. The tool records which case it sends and records the measured time. To get accurate time measurements the tool relies high-precision timing measurements executed with [Timing-Proxy](https://github.com/tls-attacker/Timing-Proxy). 
+Building:
+´
 mvn clean install
-cd ..
-\\Now you can clone this project 
-git clone https://github.com/RUB-NDS/TLS-Attacker-Project-Template.git
-cd TLS-Attacker-Project-Template
-```
-Now you should have everything you need. You can build the example project with:
-```
-mvn clean package
-```
-After you built the project you can run the jar from the apps folder.
-```
-java -jar apps/TLS-Attacker-Template.jar "10.160.160.3" "50001" "TLS12"
-```
-The example code specifies a basic config with an example WorkflowTrace. It then tries to connect to a server on 10.160.160.3 at port 50001. If there is no Server listening on that port you will get an ConfigurationException.
-We internally use Netbeans to work with TLS-Attacker. However you can use the IDE of your choice. If you have questions just contact @ic0nz1, @jurajsomorovsky or create an issue here on github.
+´
 
-Have fun :)
+To run the tool you best have a network card with high precision timestamping capabilities like the Nexus High Resolution Timestamp Capture NIC from Exablaze (CISCO), but any other high precision timestamping card will do.
+
+First start the server you want to test, then start the timing-proxy, and then start this tool and connect to the timing proxy. The tool will then start to perform the measurments. This may take a while.
+
